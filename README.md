@@ -1,5 +1,3 @@
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-
 # 分布式系统 期末作业
 ### 作业选题
 通过Mapreduce框架构建简单Tri-gram模型
