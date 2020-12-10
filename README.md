@@ -1,8 +1,9 @@
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
 # 分布式系统 期末作业
 ### 作业选题
 通过Mapreduce框架构建简单Tri-gram模型
 ***
-[1](九月OnTheWay)
 
 ### 作业简介
 &emsp;&emsp;本作业在JavaSE-1.8下编写。需额外将hadoop包加入本地项目依赖项。项目分为两个部分，A部分额外引用了[`jieba分词`](https://github.com/huaban/jieba-analysis) "结巴分词(java版) jieba-analysis" ，通过中文分词的截断句子创建，B部分对中文句使用逐字的截断。
