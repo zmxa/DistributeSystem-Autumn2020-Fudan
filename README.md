@@ -54,19 +54,19 @@ src
 ```
 
 ### 数据平滑
-在得到全部Tri-gram后，对于形式为 `(a, b, c)`具有次数 `val` 的Tri-gram对，对c进行加和求得Bi-gram`(a,b)`具有次数<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/1.png"/>。最后对全文进行一次`word-count`，求得模糊的总字数$\sum\limits _{voc}$。  
+在得到全部Tri-gram后，对于形式为 `(a, b, c)`具有次数 `val` 的Tri-gram对，对c进行加和求得Bi-gram`(a,b)`具有次数<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/1.png"/>。最后对全文进行一次`word-count`，求得模糊的总字数<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/2.png"/>。  
 在最终计算时才进行平滑处理，而非在源文件中体现平滑。使用的公式为  
-$$ P(w_2|w_0w_1)=\frac{c((w_0,w_1,w_2))+1}{c((w_0,w_1))+|V|}$$
-对于$c((w_0,w_1)) = 0$的情况，做模糊处理。
-$$ P(w_2|w_0w_1)=\frac{1}{{|V|}}$$
+<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/3.png"/>
+对于<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/4.png"/>的情况，做模糊处理。
+<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/5.png"/>
 相应的<u>句首第二字</u>概率近似为：
-$$P(w_1|w_0)=\frac{c(w_0,w_1)+1}{c(w_0)+|V|}$$
-以及在$w_0$不存在时
-$$P(w_1|w_0)=\frac{1}{|V|}$$
+<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/6.png"/>
+以及在<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/7.png"/>不存在时
+<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/8.png"/>
 <u>句首第一字</u>近似概率为：
-$$P(w_0) = \frac{c(w_0)}{\sum_{w\in V} c(w)+1}$$
+<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/9.png"/>
 一旦句首字未出现，直接采用下列近似
-$$P(w_0) = 1/{\sum_{w\in V} c(w)+1}$$
+<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/10.png"/>
 可以看到，这种概率处理容易过拟合，因此非常需要更大量的数据进行拟合。
 ***
 
