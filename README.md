@@ -4,7 +4,7 @@
 ***
 
 ### 作业简介
-&emsp;&emsp;本作业在JavaSE-1.8下编写。需额外将hadoop包加入本地项目依赖项。项目分为两个部分，A部分额外引用了[`jieba分词`](https://github.com/huaban/jieba-analysis) "结巴分词(java版) jieba-analysis" ，通过中文分词的截断句子创建，B部分对中文句使用逐字的截断。
+&emsp;&emsp;本作业在JavaSE-1.8下编写。需额外将hadoop包加入本地项目依赖项。项目分为两个部分，A部分额外引用了[`jieba分词`](https://github.com/huaban/jieba-analysis)，通过中文分词的截断句子创建，B部分对中文句使用逐字的截断。
 
 ​		两者均对句子中出现的标点符号、数字、英文及它们的组合直接替换为替代字符“&”。对于三元组中出现任两位置出现“&”的，不计入至最终结果。因此在二元组中不会出现“& &”的项。
 
