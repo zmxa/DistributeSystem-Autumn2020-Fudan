@@ -54,7 +54,7 @@ src
 ```
 
 ### 数据平滑
-在得到全部Tri-gram后，对于形式为 `(a, b, c)`具有次数 `val` 的Tri-gram对，对c进行加和求得Bi-gram`(a,b)`具有次数<img src="https://github.com/zmxa/DistributeSystem-Autumn2020-Fudan/tree/main/img_for_md/1.png"/>。最后对全文进行一次`word-count`，求得模糊的总字数$\sum\limits _{voc}$。  
+在得到全部Tri-gram后，对于形式为 `(a, b, c)`具有次数 `val` 的Tri-gram对，对c进行加和求得Bi-gram`(a,b)`具有次数<img src="https://raw.githubusercontent.com/zmxa/DistributeSystem-Autumn2020-Fudan/main/img_for_md/1.png"/>。最后对全文进行一次`word-count`，求得模糊的总字数$\sum\limits _{voc}$。  
 在最终计算时才进行平滑处理，而非在源文件中体现平滑。使用的公式为  
 $$ P(w_2|w_0w_1)=\frac{c((w_0,w_1,w_2))+1}{c((w_0,w_1))+|V|}$$
 对于$c((w_0,w_1)) = 0$的情况，做模糊处理。
